@@ -145,7 +145,7 @@ unsigned long wsym[norw];	// 保留字表中每个保留字对应的symbol类型
 unsigned long ssym[256];	// ASCII符号对应的symbol类型?
 
 
-// mnemonic [n?'mɑn?k] p-code指令的助记符数组
+// mnemonic [ni'mɑnik] p-code指令的助记符数组
 char mnemonic[8][3+1];
 
 // 代表 声明开始、语句开始、项开始(表达式) 的符号集合

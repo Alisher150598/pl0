@@ -106,7 +106,7 @@ void getsym(){
 
 		// 找到了匹配的关键字
 		if(i-1>j){
-			// 将找到的保留字类型赋给sym(最近读出的 符号symbol类型)
+			// 将找到的保留字类型赋给sym(最近读出的 单词类型)
 			sym=wsym[k];
 		}else{
 		// 否则表示未找到匹配，则将sym置为ident类型，表示是标识符
@@ -351,7 +351,7 @@ void factor(unsigned long fsys){
 			}
 			// 获取下一个单词
 			getsym();
-		} else if(sym==number){
+		} else if(sym==number) {
 		// 如果识别到数字
 			if(num>amax){
 				// 判别数字是否超过规定上限,超过上限,报31号错误
@@ -431,7 +431,7 @@ void expression(unsigned long fsys){
 		term(fsys|plus|minus);
     }
 	// 项后面可以接若干个term,使用操作符+-相连,因此此处用while
-    while(sym==plus||sym==minus){
+    while(sym==plus||sym==minus) {
 		// 记录运算符类型
 		addop=sym;
 		// 获取下一个sym类型
@@ -750,6 +750,8 @@ void block(unsigned long fsys){
 		    block(fsys|semicolon);
 		    // 递归返回后，各个变量恢复原来的值
 		    lev=lev-1; tx=tx1; dx=dx1;
+			
+			// ??? 还没看懂
 		    // 递归调用返回后应该接分号。如果是分号
 		    if(sym == semicolon) {
 		    	// 获取下一个单词
@@ -763,6 +765,7 @@ void block(unsigned long fsys){
 		}
 		// 测试当前的sym是否合法。报7号错误
 		test(statbegsys|ident,declbegsys,7);
+		
 	// 一直循环到sym不在声明符号集中为止
     } while(sym & declbegsys);
 

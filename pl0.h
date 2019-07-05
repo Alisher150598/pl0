@@ -17,8 +17,11 @@ pl/0 已有的语法:
 	
 */
 
-// 宏定义
-#define norw       11             // 保留字的数目
+// 宏定义 
+
+// atl
+#define norw       20             // 保留字的数目
+
 #define txmax      100            // 符号表的长度
 #define nmax       14             // 数字的最大长度
 #define al         10             // 标识符的最大长度
@@ -35,6 +38,11 @@ pl/0 已有的语法:
 #define plus       0x8				// +
 #define minus      0x10				// -
 #define times      0x20				// *
+
+// atl
+#define divsym     0x30				// div
+#define modsym	   0x50				// mod
+
 #define slash      0x40				// /
 #define eql        0x100			// =
 #define neq        0x200			// <>
@@ -42,6 +50,14 @@ pl/0 已有的语法:
 #define leq        0x800			// <=
 #define gtr        0x1000			// >
 #define geq        0x2000			// >=
+
+// atl
+#define true 	   0x300			// true
+#define false 	   0x500			// false
+#define and		   0x3000			// and
+#define or		   0x5000			// or
+#define not	 	   0x7000			// not
+
 #define lparen     0x4000			// (
 #define rparen     0x8000			// )
 #define comma      0x10000			// ,
@@ -54,6 +70,11 @@ pl/0 已有的语法:
 #define beginsym   0x100000			// begin
 #define endsym     0x200000			// end
 #define ifsym      0x400000			// if
+
+// atl
+#define elsesym    0x800000 		// else
+
+
 #define oddsym     0x80				// 内置函数odd()，也算作保留字
 #define thensym    0x800000			// then
 #define whilesym   0x1000000		// while
@@ -63,10 +84,13 @@ pl/0 已有的语法:
 #define varsym     0x10000000		// var
 #define procsym    0x20000000		// procedure
 
+// atl
+#define exitsym    0x40000000		// exit
+
 
 // 对象的类型包括三种：常量、变量、过程
 enum object {
-    constant, variable, proc
+    constant, variable, proc, integer, real, Boolean
 };
 
 

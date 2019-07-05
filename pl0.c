@@ -784,7 +784,8 @@ void block(unsigned long fsys){
     // 测试当前状态是否合法,有问题报8号错误
     test(fsys,0,8);
     // 列出该block所生成的p-code
-    listcode(cx0);
+
+	//listcode(cx0);
 }
 
 // 计算基地址的函数
@@ -984,6 +985,18 @@ main(){
     strcpy(word[3],  "do        ");
     strcpy(word[4],  "end       ");
     strcpy(word[5],  "if        ");
+
+	// atl
+	strcpy(word[11], "else      ");
+	strcpy(word[12], "exit      ");
+	strcpy(word[13], "and       ");
+	strcpy(word[14], "or        ");
+	strcpy(word[15], "not       ");
+	strcpy(word[16], "div       ");
+	strcpy(word[17], "mod       ");
+	strcpy(word[18], "true      ");
+	strcpy(word[19], "false     ");
+
     strcpy(word[6],  "odd       ");
     strcpy(word[7],  "procedure ");
     strcpy(word[8],  "then      ");
